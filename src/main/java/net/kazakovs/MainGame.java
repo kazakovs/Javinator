@@ -1,14 +1,11 @@
 package net.kazakovs;
 
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Scanner;
 
-/**
- * Created by kazak on 3/2/2016.
- */
 public class MainGame {
-    public static String currentAnswer="";
+    private static String currentAnswer="";
+
     public static void main(String[] args) throws Exception {
 
         Scanner scan = new Scanner(System.in);

@@ -7,6 +7,8 @@ import java.util.Map;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import net.kazakovs.enity.Elements;
+import net.kazakovs.enity.Response;
 
 public class Javinator implements IJavinator{
 
@@ -67,10 +69,10 @@ public class Javinator implements IJavinator{
 
 
     private double getProgression() {
-        if(this.getCurrentResponse().getParameters().getStep_information()==null)
+        if(this.getCurrentResponse().getParameters().getStepInformation()==null)
             return this.getCurrentResponse().getParameters().getProgression();
         else
-            return this.getCurrentResponse().getParameters().getStep_information().getProgression();
+            return this.getCurrentResponse().getParameters().getStepInformation().getProgression();
     }
 
     public Boolean haveGuess(){
@@ -125,7 +127,7 @@ public class Javinator implements IJavinator{
         if(this.started) {
             return this.currentResponse.getParameters().getQuestion() != null ?
                     this.currentResponse.getParameters().getQuestion() :
-                    this.currentResponse.getParameters().getStep_information().getQuestion();
+                    this.currentResponse.getParameters().getStepInformation().getQuestion();
         }
         return null;
     }

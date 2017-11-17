@@ -10,9 +10,6 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by kazak on 3/3/2016.
- */
 public class RegexpJavinator implements IJavinator {
 
     private Integer step;
