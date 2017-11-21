@@ -9,24 +9,24 @@ public class MainGame {
     public static void main(String[] args) throws Exception {
 
         Scanner scan = new Scanner(System.in);
-        IJavinator ja = new RegexpJavinator();
+        Javinator javinator = new JavinatorImpl();
         System.out.println("Would you like to play a game? (yes/no): ");
         switch (Javinator.getAnswerID(scan.next())){
             case 1:
                 System.exit(0);
             case 0:
-                ja.startSession();
+                javinator.startSession();
         }
 
-        while(!currentAnswer.equalsIgnoreCase("exit") && !ja.haveGuess()){
-            System.out.printf("Question %s : %s \n\t", ja.getStep(), ja.getCurrentQuestion());
+        while(!currentAnswer.equalsIgnoreCase("exit") && !javinator.haveGuess()){
+            System.out.printf("Question %s : %s \n\t", javinator.getStep(), javinator.getCurrentQuestion());
             currentAnswer = scan.next();
-            ja.sendAnswer(currentAnswer);
+            javinator.sendAnswer(currentAnswer);
         }
         
-        if(ja.haveGuess()){
+        if(javinator.haveGuess()){
             System.out.println("Here are some guesses: ");
-            String[] guesses = ja.getAllGuesses();
+            String[] guesses = javinator.getAllGuesses();
             Arrays.sort(guesses);
             for(String str : guesses){
                 System.out.println(str);
@@ -34,7 +34,7 @@ public class MainGame {
         } else {
             System.out.println("Unfortunately, Nothing :( ");
         }
-        ja.endSession();
+        javinator.endSession();
 
     }
 

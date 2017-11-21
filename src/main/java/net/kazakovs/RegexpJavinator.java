@@ -10,11 +10,11 @@ import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexpJavinator implements IJavinator {
+@Deprecated
+public class RegexpJavinator implements Javinator {
 
     private Integer step;
     private String currentQuestion;
-    private String currentAnswer;
     private Integer session;
     private Integer signature;
 
@@ -22,7 +22,7 @@ public class RegexpJavinator implements IJavinator {
 
     public Integer startSession() {
 
-        String url = CORE_URL+"new_session?partner=1&player=Javinator";
+        String url = CORE_URL+"new_session?partner=1&player=JavinatorImpl";
         String request = sendRequest(url);
         System.out.println("response: " +  request );
 

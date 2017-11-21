@@ -1,12 +1,13 @@
 package net.kazakovs.enity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import java.util.Arrays;
 
 @Data
 public class Parameters {
     private Identification identification;
+    @JsonProperty("step_information")
     private StepInformation stepInformation;
     private String question;
     private Answer[] answers;
